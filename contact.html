@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+      <link rel="stylesheet" type="text/css" href="home.css">
+      <link rel="stylesheet" type="text/css" href="header.css">
+      <link rel="stylesheet" type="text/css" href="quote.css">
+      <title> Sunrise Builders </title>
+   </head>
+   <body>
+      <div class="top">
+         <div class="header">
+            <a href="home.html#top" class="logo">Sunrise Builders</a>
+            <div class="header-right">
+             <div class="phone-link">
+                 <a href="tel:9255236618">
+                     <img src="icons/phone-call.png" class="clickable-icon">
+                     <span class="contact-text">(925) 523-6618</span>
+                 </a>
+             </div>
+             <div class="email-link">
+                 <a href="mailto: sunrisebuilders6618@gmail.com">
+                     <img src="icons/email.png" class="clickable-icon">
+                     <span class="contact-text">sunrisebuilders6618@gmail.com</span>
+                 </a>
+             </div>
+             <div class="location-link">
+                 <a href="https://maps.app.goo.gl/D6Cgjt5kq63nrQNz5">
+                     <img src="icons/maps-and-flags.png" class="clickable-icon">
+                     <span class="contact-text-end">3701 Old Santa Rita Rd. #18</span>
+                 </a>
+             </div>
+           </div>
+            </div>
+         <div class="topnav">
+            <a href="home.html" target="_self">Home</a>
+            <a href="about.html" target="_self">About</a>
+            <a href="services.html" target="_self">Services</a>
+            <a href="portfolio.html" target="_self">Portfolio</a>
+            <a class= "active" href="contact.html" target="_self">Contact</a>
+            <a href="contact.html" class="right">Get a Quote</a>
+         </div>
+      </div>
+      <div class="content">
+        <div class="form-container">
+            <h2>Tell Us About Your Project</h2>
+   
+            <form action="https://formspree.io/f/xnnawden" method="POST" id="quoteForm">
+                <label class="redask" for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                
+                <label class="redask" for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                
+                <label class="redask" for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label class="redask" for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label class="redask" for="description">Project Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+   
+            <div id="formSuccessMessage" style="display:none;">Thank you for your submission! We will contact you soon.</div>
+   
+            <script>
+            document.getElementById('quoteForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var form = event.target;
+            var formData = new FormData(form);
+    
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                form.style.display = 'none';
+                document.getElementById('formSuccessMessage').style.display = 'block';
+                } else {
+                alert('There was a problem with your submission. Please try again.');
+                }
+            });
+            });
+            </script>
+         </div>
+         <div class="contact-info">
+            <h1>CONTACT US</h1>
+            <div class="contact-container">
+                <a href="tel:9255236618">
+                    <img src="icons/phone-call.png" class="clickable-icon">
+                    <span class="contact-text">(925) 523-6618</span>
+                </a>
+            </div>
+            <div class="contact-container">
+                <a href="mailto: sunrisebuilders6618@gmail.com">
+                    <img src="icons/email.png" class="clickable-icon">
+                    <span class="contact-text">sunrisebuilders6618@gmail.com</span>
+                </a>
+            </div>
+            <div class="contact-container">
+                <a href="https://maps.app.goo.gl/D6Cgjt5kq63nrQNz5">
+                    <img src="icons/maps-and-flags.png" class="clickable-icon">
+                    <span class="contact-text-end">3701 Old Santa Rita Rd. #18</span>
+                </a>
+            </div>
+            <div class="contact-container">
+                <a href="https://www.instagram.com/sunrisebuildersca/">
+                    <img src="icons/instagram.png" class="clickable-icon">
+                    <span class="contact-text-end">@sunrisebuildersca</span>
+                </a>
+            </div>
+            <div class="contact-container">
+                <a href="https://www.instagram.com/sunrisebuildersca/">
+                    <img src="icons/facebook-app-symbol.png" class="clickable-icon">
+                    <span class="contact-text-end">facebooklink</span>
+                </a>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

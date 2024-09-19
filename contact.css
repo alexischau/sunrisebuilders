@@ -1,0 +1,82 @@
+.contact-text {
+    margin-left: 5px; /* Add margin to the left of the text */
+    margin-right: 20px;
+    line-height: 1.2; /* Adjust line height to ensure proper spacing between lines */
+    display: flex; /* Align the text with the image */
+    align-items: center; /* Align the text with the middle of the image */
+}
+.contact-text-end {
+margin-left: 5px; /* Add margin to the left of the text */
+line-height: 1.2; /* Adjust line height to ensure proper spacing between lines */
+display: flex; /* Align the text with the image */
+align-items: center; /* Align the text with the middle of the image */
+}
+
+.contact-info {
+    margin-top: 170px;
+background-color: #FF9033;
+text-align: center;
+}
+
+.contact-wrapper {
+width: 100%;
+    margin: 30px auto;
+    
+    display: grid;
+grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: 100%;
+    grid-template-columns: 300px 300px 300px; */
+    
+    /* grid-row-gap: 30px;
+    grid-column-gap: 30px; */
+    grid-gap: 30px;
+margin-bottom: 0;
+}
+
+.contact-info h1 {
+padding-top: 50px;
+font-size: 40px;
+}
+
+.contactcard {
+	padding: 20px;
+	font-size: 20px;
+	color: black;
+	background-color: #FF9033;
+  border-radius: 8px;
+  flex: 1 1 100%; /* Ensures each card takes up the full width when stacked */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.contactcardtitle{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.contactcardicon{
+    margin-top: 10px;
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 15px;
+    width: 50px; /* Responsive image size */
+    height: auto;
+    /* vertical-align: middle; */
+}
+
+.contactcard p{
+    margin-top: 5px;
+    font-size: 25px;
+}
+@media (max-width: 768px) {
+.contact-wrapper {
+    grid-template-columns: 1fr; /* Stack cards in a single column */
+    max-width: 100%; /* Ensure cards don't exceed the container width */
+    margin: 0 auto;
+}
+}
+  
