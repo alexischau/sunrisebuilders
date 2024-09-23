@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <link rel="stylesheet" type="text/css" href="slide.css">
+    <title>Sunrise Builders</title>
+</head>
+<body>
+    <div class="top">
+        <div class="header">
+            <a href="home.html#top" class="logo">Sunrise Builders</a>
+            <div class="header-right">
+                <div class="phone-link">
+                    <a href="tel:9255236618">
+                        <img src="icons/phone-call.png" class="clickable-icon">
+                        <span class="contact-text">(925) 523-6618</span>
+                    </a>
+                </div>
+                <div class="email-link">
+                    <a href="mailto:sunrisebuilders6618@gmail.com">
+                        <img src="icons/email.png" class="clickable-icon">
+                        <span class="contact-text">sunrisebuilders6618@gmail.com</span>
+                    </a>
+                </div>
+                <div class="location-link">
+                    <a href="https://maps.app.goo.gl/D6Cgjt5kq63nrQNz5">
+                        <img src="icons/maps-and-flags.png" class="clickable-icon">
+                        <span class="contact-text-end">3701 Old Santa Rita Rd. #18</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="topnav" id="topnav">
+            <a class="active" href="#top">Home</a>
+            <a href="about.html" target="_self">About</a>
+            <a href="services.html" target="_self">Services</a>
+            <a href="portfolio.html" target="_self">Portfolio</a>
+            <a href="contact.html" target="_self">Contact</a>
+            <a href="contact.html#quoteForm" class="right">Get a Quote</a>
+        </div>
+    </div>
+    <div class="slide-wrapper">
+        <div class="left-side">
+            <div class="left-text">
+                <h1>Trusted Craftsmanship, Family Values</h1>
+                <p>As a family-owned, small business with over 20 years of experience, we proudly serve the Bay Area with quality craftsmanship and a personal touch.</p>
+            </div> 
+            <a href="portfolio.html">
+                <button class="more">Click Here to See More of Our Work</button>
+            </a>
+        </div>
+        <div class="image-slideshow">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <div class="image fade">
+                <img src="pictures/slideshow/chairandmirror.jpg" alt="chair and mirror">
+            </div>
+            <div class="image fade">
+                <img src="pictures/slideshow/signandwall.JPG" alt="sign and wall">
+            </div>
+            <div class="image fade">
+                <img src="pictures/slideshow/desk.jpg" alt="desk">
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    <script>
+        let index = 0;
+        displayImages(index);
+
+        function displayImages(n) {
+            const images = document.getElementsByClassName("image");
+            if (n >= images.length) {
+                index = 0;
+            } 
+            if (n < 0) {
+                index = images.length - 1;
+            }
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = "none";
+            }
+            images[index].style.display = "block";
+        }
+
+        function plusSlides(n) {
+            displayImages(index += n);
+        }
+
+        function autoSlides() {
+            index++;
+            displayImages(index);
+            setTimeout(autoSlides, 8000); // Change image every 8 seconds
+        }
+
+        autoSlides();
+    </script>
+</body>
+</html>

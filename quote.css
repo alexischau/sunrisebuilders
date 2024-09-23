@@ -1,0 +1,123 @@
+/* Body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  /* Form Container Styling */
+  .form-container {
+    background-color: #fefefe;
+    margin: 20px auto;
+    margin-left: 20px;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px; /* Rounded corners */
+    width: 90%; /* Full width with some margin */
+    max-width: 600px; /* Maximum width */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    margin-top: 170px;
+    flex: 1; /* Allow the form container to grow and fill available space */
+    margin-right: 100px; /* Add space between the form and contact info */
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .contact-info {
+    margin-top: 170px;
+    margin-right: 20px;
+    padding: 20px; /* Add some padding for better visibility */
+    flex: 1; /* Allow it to grow and fill available space */
+    /* border: 1px solid black;  */
+  }
+
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-top: 10px;
+  }
+  
+  form input,
+  form textarea {
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px; /* Minimum height for textarea */
+  }
+  
+  form button {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #F77F00;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px; /* Rounded corners for button */
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #de7200;
+  }
+  
+.redask:after {
+  color: #e32;
+  content: ' *';
+  display:inline;
+}
+
+.contact-info h1{
+  font-size: 50px;
+  margin-bottom: 60px;
+}
+.contact-container a{
+  text-decoration: none;
+  color: black;
+}
+
+.contact-container{
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.contact-container img{
+  width: 30px;
+}
+
+#quoteForm {
+  scroll-margin-top: 250px;
+}
+
+@media (max-width: 980px) {
+  .content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .contact-info {
+    order: -1; /* Move contact-info above the form-container */
+    margin-top: 120px;
+    width: 80%; /* Make it full width */
+  }
+
+  .form-container {
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 80%; /* Make it full width */
+  }
+}

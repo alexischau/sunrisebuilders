@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+      <link rel="stylesheet" type="text/css" href="home.css">
+      <link rel="stylesheet" type="text/css" href="header.css">
+      <link rel="stylesheet" type="text/css" href="portfolio.css">
+      <title> Portfolio | Sunrise Builders </title>
+   </head>
+   <body>
+      <div class="top">
+         <div class="header">
+         <a href="home.html#top" class="logo">Sunrise Builders</a>
+         <div class="header-right">
+          <div class="phone-link">
+              <a href="tel:9255236618">
+                  <img src="icons/phone-call.png" class="clickable-icon">
+                  <span class="contact-text">(925) 523-6618</span>
+              </a>
+          </div>
+          <div class="email-link">
+              <a href="mailto: sunrisebuilders6618@gmail.com">
+                  <img src="icons/email.png" class="clickable-icon">
+                  <span class="contact-text">sunrisebuilders6618@gmail.com</span>
+              </a>
+          </div>
+          <div class="location-link">
+              <a href="https://maps.app.goo.gl/D6Cgjt5kq63nrQNz5">
+                  <img src="icons/maps-and-flags.png" class="clickable-icon">
+                  <span class="contact-text-end">3701 Old Santa Rita Rd. #18</span>
+              </a>
+          </div>
+        </div>
+         </div>
+         <div class="topnav">
+            <a href="home.html" target="_self">Home</a>
+            <a href="about.html" target="_self">About</a>
+            <a href="services.html" target="_self">Services</a>
+            <a class="active" href="#top">Portfolio</a>
+            <a href="contact.html" target="_self">Contact</a>
+            <a href="contact.html#quoteForm" class="right">Get a Quote</a>
+         </div>
+      </div>
+      <div class="portfolio-page">
+        <div class="portfolio-top">
+        <h1>PORTFOLIO</h1>
+        <p> What Work Would You Like to See?</p>
+        <div class="portfolio-buttons">
+          <a href="#homeremodel"><button class="clickable-portfolio"> Home Remodeling </button></a>
+          <a href="#personalsign"><button class="clickable-portfolio"> Personalized Signs </button></a>
+          <a href="#customfurn"><button class="clickable-portfolio"> Custom Furniture </button></a>
+          <a href="#commercialrenov"><button class="clickable-portfolio"> Commercial Renovation </button></a>
+        </div>
+        <p class="scroll"> Or scroll to explore past projects on your own </p>
+        </div>
+        <div class="section" id="homeremodel">
+          <h1> Home Remodeling Portfolio </h1>
+          <div class="project-display">
+            <div class="single-project">
+                <div class="single-picture">
+                    <a href="homerenovpages/backyardproject.html" class="slider-link">
+                        <img class="slider-before" src="pictures/homerenov/backyard/backyardafter.jpg" alt="Before">
+                        <span class="tooltip-text">Click for More</span>
+                    </a>
+                </div>
+            </div>
+          </div>       
+        </div>
+        <div class="section" id="personalsign">
+          <h1>Personalized Signs Portfolio </h1>
+          <div class="project-display">
+            <div class="single-project">
+                <div class="single-picture">
+                    <a href="personalsignpages/sunrisesign.html" class="slider-link">
+                        <img src="pictures/personalsign/sunrisesign.JPG">
+                        <span class="tooltip-text">Click for More</span>
+                    </a>
+                </div>
+            </div>
+            <div class="single-project">
+              <div class="single-picture">
+                  <a href="personalsignpages/ajusign.html" class="slider-link">
+                      <img src="pictures/personalsign/ajusign.JPG">
+                      <span class="tooltip-text">Click for More</span>
+                  </a>
+              </div>
+            </div>
+          </div>       
+        </div>
+        <div class="section" id="customfurn">
+          <h1>Custom Furniture Portfolio </h1>
+          <div class="project-display">
+            <div class="single-project">
+                <div class="single-picture">
+                    <a href="personalsignpages/sunrisesign.html" class="slider-link">
+                        <img src="pictures/personalsign/sunrisesign.JPG">
+                        <span class="tooltip-text">Click for More</span>
+                    </a>
+                </div>
+            </div>
+          </div>       
+        </div>
+        <div class="section" id="commercialrenov">
+          <h1> Commercial Renovation Portfolio </h1>
+          <div class="project-display">
+            <div class="single-project">
+                <div class="single-picture">
+                    <a href="commericalrenovpages/ajuthespa.html" class="slider-link">
+                        <img class="slider-before" src="pictures/commercialrenov/ajuthespa/after.JPG" alt="Before">
+                        <span class="tooltip-text">Click for More</span>
+                    </a>
+                </div>
+            </div>
+          </div>       
+        </div>
+      </div>
+      <script>
+        document.querySelectorAll('.slider-link').forEach(link => {
+        link.addEventListener('mousemove', function(e) {
+        const tooltip = this.querySelector('.tooltip-text');
+        const rect = this.getBoundingClientRect();
+
+        // Calculate position
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Position the tooltip
+        tooltip.style.left = `${x + 80}px`;
+        tooltip.style.top = `${y + 20}px`; // 20px offset from the mouse position
+        tooltip.style.visibility = 'visible';
+        tooltip.style.opacity = 1;
+        });
+
+        link.addEventListener('mouseleave', function() {
+        const tooltip = this.querySelector('.tooltip-text');
+        tooltip.style.visibility = 'hidden';
+        tooltip.style.opacity = 0;
+        });
+        });
+
+      </script>
+      <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      function initializeSlider(sliderId) {
+        const container = document.querySelector(`#${sliderId}`);
+        const afterImage = container.querySelector(".slider-after");
+        const handle = container.querySelector(".slider-handle");
+
+        // Set initial handle position and clipPath
+        const initialPercentage = 50;
+        handle.style.left = `${initialPercentage}%`;
+        afterImage.style.clipPath = `inset(0 ${100 - initialPercentage}% 0 0)`;
+
+        let dragging = false;
+        let lastX = 0;
+
+        // Add mouse event listeners
+        handle.addEventListener("mousedown", (e) => {
+          dragging = true;
+          lastX = e.clientX;
+          e.preventDefault();
+        });
+
+        document.addEventListener("mouseup", () => {
+          dragging = false;
+        });
+
+        document.addEventListener("mouseleave", () => {
+          dragging = false;
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          if (!dragging) return;
+
+          const rect = container.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          let widthPercentage = (x / rect.width) * 100;
+
+          // Add constraint to keep the handle within 1% of either edge
+          widthPercentage = Math.max(0, Math.min(widthPercentage, 100));
+
+          // Update handle position using requestAnimationFrame
+          window.requestAnimationFrame(() => {
+            handle.style.left = `${widthPercentage}%`;
+            afterImage.style.clipPath = `inset(0 ${100 - widthPercentage}% 0 0)`;
+          });
+
+          lastX = x;
+        });
+
+        // Add touch event listeners
+        handle.addEventListener("touchstart", (e) => {
+          dragging = true;
+          lastX = e.touches[0].clientX;
+          e.preventDefault();
+        });
+
+        document.addEventListener("touchend", () => {
+          dragging = false;
+        });
+
+        container.addEventListener("touchcancel", () => {
+          dragging = false;
+        });
+
+        container.addEventListener("touchmove", (e) => {
+          if (!dragging) return;
+
+          const rect = container.getBoundingClientRect();
+          const x = e.touches[0].clientX - rect.left;
+          let widthPercentage = (x / rect.width) * 100;
+
+          // Add constraint to keep the handle within 1% of either edge
+          widthPercentage = Math.max(0, Math.min(widthPercentage, 100));
+
+          // Update handle position using requestAnimationFrame
+          window.requestAnimationFrame(() => {
+            handle.style.left = `${widthPercentage}%`;
+            afterImage.style.clipPath = `inset(0 ${100 - widthPercentage}% 0 0)`;
+          });
+
+          lastX = x;
+        });
+      }
+
+      initializeSlider("homeremodelslider1");
+      initializeSlider("commericalrenovslider1");
+      });
+      </script>
+      <script>
+        const portfolioTop = document.querySelector('.portfolio-top');
+        const homeRemodelButton = document.querySelector('a[href="#homeremodel"] button');
+        const personalSignButton = document.querySelector('a[href="#personalsign"] button');
+        const customFurnButton = document.querySelector('a[href="#customfurn"] button');
+        const commercialRenovButton = document.querySelector('a[href="#commercialrenov"] button');
+    
+        homeRemodelButton.addEventListener('mouseover', () => {
+            portfolioTop.classList.remove('bg-personal-sign', 'bg-custom-furniture', 'bg-commercial-renovation');
+            portfolioTop.classList.add('bg-home-remodel');
+        });
+    
+        personalSignButton.addEventListener('mouseover', () => {
+            portfolioTop.classList.remove('bg-home-remodel', 'bg-custom-furniture', 'bg-commercial-renovation');
+            portfolioTop.classList.add('bg-personal-sign');
+        });
+    
+        customFurnButton.addEventListener('mouseover', () => {
+            portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-commercial-renovation');
+            portfolioTop.classList.add('bg-custom-furniture');
+        });
+    
+        commercialRenovButton.addEventListener('mouseover', () => {
+            portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-custom-furniture');
+            portfolioTop.classList.add('bg-commercial-renovation');
+        });
+    
+        // Optional: Reset background when mouse leaves any button
+        document.querySelector('.portfolio-buttons').addEventListener('mouseleave', () => {
+            portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-custom-furniture', 'bg-commercial-renovation');
+        });
+    </script>
+   </body>
+</html>

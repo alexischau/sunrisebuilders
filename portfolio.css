@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+}
+
+.portfolio-page{
+    margin-top: 150px;
+}
+
+.portfolio-page h1{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 0;
+    padding-top: 20px;
+}
+
+.portfolio-page p{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.portfolio-buttons{
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 70px; /* Space between the buttons */
+    padding: 10px;
+}
+
+.clickable-portfolio{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border-width: 1.5px;
+}
+
+.portfolio-page .scroll {
+    margin-top: 200px;
+    font-size: 15px;
+}
+
+.clickable-portfolio:hover {
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
+}
+
+.section h1{
+    font-size: 30px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.custom-image-slider {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; 
+    
+  }
+
+#homeremodel {
+    padding-top: 80px; 
+    margin-top: -100px; 
+}
+
+#personalsign {
+    padding-top: 80px;
+    margin-top: -100px; 
+}
+#customfurn {
+    padding-top: 80px;
+    margin-top: -100px; 
+}
+#commercialrenov {
+    padding-top: 80px; 
+    margin-top: -100px; 
+}
+
+.single-project{
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    height: 100%; /* Ensure the single-project fills the grid cell */
+}
+
+.project-display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+    gap: calc(8vw); /* Gap between grid items */
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%; /* Full width of the container */
+    justify-content: center; /* Center items horizontally */
+}
+
+
+/* Tooltip styling */
+.tooltip-text {
+    visibility: hidden;
+    width: 130px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 2000;
+    bottom: 100%; /* Positioned directly above the image */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+.single-picture {
+    width: 100%;
+    max-width: 100%; /* Ensure images don't exceed container width */
+    padding-bottom: 75%; /* Maintain aspect ratio */
+    position: relative;
+}
+
+.single-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    display: block; /* Remove any extra space below the image */
+}
+
+.single-picture .tooltip-text {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 2000;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    opacity: 0;
+    bottom: 120%; /* Adjust based on desired tooltip position */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.portfolio-top {
+    position: relative;
+    text-align: center;
+    width: 100%; /* Full width of the container */
+    height: 500px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.portfolio-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.clickable-portfolio {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f77f00;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.clickable-portfolio:hover {
+    background-color: #de7200;
+}
+
+.scroll {
+    margin-top: 20px;
+}
+
+.bg-home-remodel {
+    background-image: url('pictures/homerenov/backyard/backyardafter.jpg');
+}
+
+.bg-personal-sign {
+    background-image: url('pictures/personalsign/sunrisesign.JPG');
+}
+
+.bg-custom-furniture {
+    background-image: url('pictures/personalsign/ajusign.JPG');
+}
+
+.bg-commercial-renovation {
+    background-image: url('pictures/commercialrenov/ajuthespa/aju10.JPG');
+}
+
+@media (max-width: 980px) {
+    .portfolio-top {
+        padding-bottom: 600px;
+    }
+
+    .portfolio-page .scroll {
+        margin-top: 100px;
+        font-size: 15px;
+    }
+
+    .clickable-portfolio{
+        width: 100%;
+        height: 70px;
+    }
+
+    .portfolio-buttons{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-auto-rows: auto; /* Allows rows to grow with content */
+        grid-gap: 30px;
+        grid-auto-flow: dense;
+    }
+
+    .project-display{
+        grid-template-columns: 1fr;
+        padding-left: 10%;
+        padding-right: 10%;
+        gap: 10px;
+    }
+
+    .single-picture{
+        margin-bottom: 10%;
+    }
+
+    .portfolio-page h1{
+        padding-top: 0px;
+    }
+  }
