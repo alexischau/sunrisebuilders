@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
 .header, .topnav {
   box-sizing: content-box; /* Override box-sizing for header and topnav */
 }

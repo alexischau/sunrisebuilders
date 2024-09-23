@@ -1,16 +1,19 @@
 .middletext {
     text-align: center;
     margin-top: 190px;
+    text-decoration: none;
 }
 
 .middletext h1{
     margin-top: 50px;
     margin-bottom: 0;
+    text-decoration: none;
 }
 
 .middletext p{
     margin-top: 5px;
     margin-bottom: 40px;
+    text-decoration: none;
 }
 
 .servicescontainer {
@@ -35,6 +38,11 @@
     flex: 1 1 100%; /* Ensures each card takes up the full width when stacked */
     max-width: 100%;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+.card h1, .card p, .card a {
+    text-decoration: none; /* Remove underline for text, paragraphs, and anchor tags */
 }
 
 .card:hover{
