@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 .portfolio-page{
     margin-top: 150px;
 }
@@ -61,20 +63,20 @@
   }
 
 #homeremodel {
-    padding-top: 80px; 
+    padding-top: 100px; 
     margin-top: -100px; 
 }
 
 #personalsign {
-    padding-top: 80px;
+    padding-top: 100px;
     margin-top: -100px; 
 }
 #customfurn {
-    padding-top: 80px;
+    padding-top: 100px;
     margin-top: -100px; 
 }
 #commercialrenov {
-    padding-top: 80px; 
+    padding-top: 100px; 
     margin-top: -100px; 
 }
 
@@ -186,7 +188,7 @@
 }
 
 .scroll {
-    margin-top: 20px;
+    margin-top: 200px;
 }
 
 .bg-home-remodel {
