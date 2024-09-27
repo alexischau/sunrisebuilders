@@ -34,13 +34,16 @@
           </div>
         </div>
          </div>
-         <div class="topnav">
+         <div class="topnav" id="topnav">
             <a href="home.html" target="_self">Home</a>
             <a href="about.html" target="_self">About</a>
             <a href="services.html" target="_self">Services</a>
             <a class="active" href="#top">Portfolio</a>
             <a href="contact.html" target="_self">Contact</a>
             <a href="contact.html#quoteForm" class="right">Get a Quote</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+              &#9776; <!-- This is the hamburger icon -->
+          </a>
          </div>
       </div>
       <div class="portfolio-page">
@@ -142,94 +145,6 @@
 
       </script>
       <script>
-      document.addEventListener("DOMContentLoaded", function () {
-      function initializeSlider(sliderId) {
-        const container = document.querySelector(`#${sliderId}`);
-        const afterImage = container.querySelector(".slider-after");
-        const handle = container.querySelector(".slider-handle");
-
-        // Set initial handle position and clipPath
-        const initialPercentage = 50;
-        handle.style.left = `${initialPercentage}%`;
-        afterImage.style.clipPath = `inset(0 ${100 - initialPercentage}% 0 0)`;
-
-        let dragging = false;
-        let lastX = 0;
-
-        // Add mouse event listeners
-        handle.addEventListener("mousedown", (e) => {
-          dragging = true;
-          lastX = e.clientX;
-          e.preventDefault();
-        });
-
-        document.addEventListener("mouseup", () => {
-          dragging = false;
-        });
-
-        document.addEventListener("mouseleave", () => {
-          dragging = false;
-        });
-
-        document.addEventListener("mousemove", (e) => {
-          if (!dragging) return;
-
-          const rect = container.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          let widthPercentage = (x / rect.width) * 100;
-
-          // Add constraint to keep the handle within 1% of either edge
-          widthPercentage = Math.max(0, Math.min(widthPercentage, 100));
-
-          // Update handle position using requestAnimationFrame
-          window.requestAnimationFrame(() => {
-            handle.style.left = `${widthPercentage}%`;
-            afterImage.style.clipPath = `inset(0 ${100 - widthPercentage}% 0 0)`;
-          });
-
-          lastX = x;
-        });
-
-        // Add touch event listeners
-        handle.addEventListener("touchstart", (e) => {
-          dragging = true;
-          lastX = e.touches[0].clientX;
-          e.preventDefault();
-        });
-
-        document.addEventListener("touchend", () => {
-          dragging = false;
-        });
-
-        container.addEventListener("touchcancel", () => {
-          dragging = false;
-        });
-
-        container.addEventListener("touchmove", (e) => {
-          if (!dragging) return;
-
-          const rect = container.getBoundingClientRect();
-          const x = e.touches[0].clientX - rect.left;
-          let widthPercentage = (x / rect.width) * 100;
-
-          // Add constraint to keep the handle within 1% of either edge
-          widthPercentage = Math.max(0, Math.min(widthPercentage, 100));
-
-          // Update handle position using requestAnimationFrame
-          window.requestAnimationFrame(() => {
-            handle.style.left = `${widthPercentage}%`;
-            afterImage.style.clipPath = `inset(0 ${100 - widthPercentage}% 0 0)`;
-          });
-
-          lastX = x;
-        });
-      }
-
-      initializeSlider("homeremodelslider1");
-      initializeSlider("commericalrenovslider1");
-      });
-      </script>
-      <script>
         const portfolioTop = document.querySelector('.portfolio-top');
         const homeRemodelButton = document.querySelector('a[href="#homeremodel"] button');
         const personalSignButton = document.querySelector('a[href="#personalsign"] button');
@@ -261,5 +176,11 @@
             portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-custom-furniture', 'bg-commercial-renovation');
         });
     </script>
+    <script>
+      function toggleMenu() {
+      var topnav = document.getElementById("topnav");
+      topnav.classList.toggle("responsive");
+      }
+  </script>
    </body>
 </html>

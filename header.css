@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between; /* Spread logo to the left and header-right to the right */
   align-items: center; /* Center items vertically */
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   padding: 5px 5px;
   margin-left: 5px;
   margin-right: 5px;
@@ -89,13 +89,12 @@ body {
   color: white;
 }
 
-/* Specific class for the right-aligned button */
-.topnav .right {
-  margin-left: auto; /* Pushes the button to the right */
-}
-
 .contact-text, .contact-text-end {
   margin-left: 5px; /* Adjust this value to increase or decrease spacing */
+}
+
+.topnav .icon {
+  display: none;
 }
 
 /* Media query for smaller screens */
@@ -114,17 +113,44 @@ body {
   .header-right {
       display: none; /* Hide header-right on smaller screens */
   }
-
-  .topnav {
-      display: flex; /* Ensure topnav is displayed */
-      background-color: #3f3f3f; /* Same background color */
-      width: 100%; /* Set a fixed width for the menu */
-      z-index: 999; /* Ensure it appears above other content */
+  
+  .topnav{
+    margin: 0;
+    padding: 0;
   }
 
   .topnav a {
-      padding: 10px 20px; /* Adjust padding for smaller screens */
-      text-align: left; /* Align text to the left */
-      font-size: 13px;
+    display: none; /* Hide all links */
+    width: 95%; /* Full width links on smaller screens */
+    text-align: right; /* Align text to the left */
+    padding: 10px 0; /* Padding for the links */
+    margin: 0; /* No margin */
+    padding-right: 20px;
   }
+
+  .topnav .icon {
+    display: block; /* Show the hamburger icon */
+    font-size: 30px;
+    color: #f2f2f2;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .topnav.responsive {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .topnav.responsive a {
+    display: block; /* Show links when toggled */
+  }
+
+  .topnav a.right {
+    margin-left: 0; 
+  }
+
+  .topnav a:hover {
+    background-color: transparent; /* Use 'transparent' instead of 'none' */
+    color: white; /* Maintain the original text color */
+  }
+
 }

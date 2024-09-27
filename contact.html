@@ -34,13 +34,16 @@
              </div>
            </div>
             </div>
-         <div class="topnav">
+         <div class="topnav" id="topnav">
             <a href="home.html" target="_self">Home</a>
             <a href="about.html" target="_self">About</a>
             <a href="services.html" target="_self">Services</a>
             <a href="portfolio.html" target="_self">Portfolio</a>
             <a class= "active" href="contact.html" target="_self">Contact</a>
             <a href="contact.html#quoteForm" class="right">Get a Quote</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                &#9776; <!-- This is the hamburger icon -->
+            </a>
          </div>
       </div>
       <div class="content">
@@ -124,5 +127,11 @@
             </div>
          </div>
       </div>
+      <script>
+        function toggleMenu() {
+        var topnav = document.getElementById("topnav");
+        topnav.classList.toggle("responsive");
+        }
+    </script>
    </body>
 </html>

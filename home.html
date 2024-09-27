@@ -41,6 +41,9 @@
             <a href="portfolio.html" target="_self">Portfolio</a>
             <a href="contact.html" target="_self">Contact</a>
             <a href="contact.html#quoteForm" class="right">Get a Quote</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                &#9776; <!-- This is the hamburger icon -->
+            </a>
         </div>
     </div>
     <div class="slide-wrapper">
@@ -96,6 +99,12 @@
         }
 
         autoSlides();
+    </script>
+    <script>
+        function toggleMenu() {
+        var topnav = document.getElementById("topnav");
+        topnav.classList.toggle("responsive");
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+.titletext {
+    text-align: center;
+    text-decoration: none;
+}
+
+.titletext h1{
+    margin-top: 170px;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.paragraph{
+    margin: 30px;
+}
+
+.dadpic{
+    float: right;
+    width: 400px;
+    margin-left: 30px;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 4em;
+}
+
+@media (max-width: 768px) {
+    
+}
