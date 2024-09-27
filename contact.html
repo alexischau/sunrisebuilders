@@ -133,5 +133,30 @@
         topnav.classList.toggle("responsive");
         }
     </script>
+    <script>
+        document.addEventListener('click', function(event) {
+    const topnav = document.getElementById("topnav");
+    const menuIcon = document.querySelector('.icon');
+    
+    // Check if the click is outside the navbar and the hamburger menu
+    if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
+        // If the menu is open, close it
+        if (topnav.classList.contains('responsive')) {
+            topnav.classList.remove('responsive');
+        }
+    }
+});
+    </script>
+    <script>
+        const getQuoteLink = document.querySelector('.topnav a[href*="quoteForm"]');
+
+// Add a click event to close the menu when "Get a Quote" is clicked
+getQuoteLink.addEventListener('click', function() {
+    const topnav = document.getElementById("topnav");
+    if (topnav.classList.contains('responsive')) {
+        topnav.classList.remove('responsive'); // Close the menu
+    }
+});
+    </script>
    </body>
 </html>

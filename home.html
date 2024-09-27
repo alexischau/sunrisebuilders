@@ -105,6 +105,21 @@
         var topnav = document.getElementById("topnav");
         topnav.classList.toggle("responsive");
         }
+
+    </script>
+    <script>
+        document.addEventListener('click', function(event) {
+    const topnav = document.getElementById("topnav");
+    const menuIcon = document.querySelector('.icon');
+    
+    // Check if the click is outside the navbar and the hamburger menu
+    if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
+        // If the menu is open, close it
+        if (topnav.classList.contains('responsive')) {
+            topnav.classList.remove('responsive');
+        }
+    }
+});
     </script>
 </body>
 </html>

@@ -53,11 +53,26 @@
         <div class="paragraph"> 
             <p> <img class="dadpic" src="pictures/dadpic.JPG"> <span class="tab"></span> Lorem ipsum odor amet, consectetuer adipiscing elit. Amet elit tristique conubia etiam hac fames dignissim. Praesent per netus eleifend finibus ullamcorper diam. Maecenas et sagittis; natoque cras ante varius urna. Duis sodales diam metus lacus efficitur purus inceptos quam enim. Torquent porta mi nullam nisl cras litora. Lorem dolor potenti netus nisl vitae. Nostra nisl semper odio felis parturient natoque ornare quis diam. Quis ut augue cubilia inceptos semper justo fermentum. Praesent consequat pellentesque tincidunt accumsan ex molestie. Class purus libero semper morbi phasellus a hac dis. Netus molestie a nam tincidunt cras dolor fusce. Ornare turpis massa ut venenatis morbi dictum. Ipsum mauris phasellus erat venenatis justo ex dapibus eros gravida. Pellentesque dolor mauris dignissim mattis consequat integer. Mi nam eros class efficitur potenti cubilia. Lacus nam posuere per; nam dui mus.</p>
         </div>
+     </div>
         <script>
             function toggleMenu() {
             var topnav = document.getElementById("topnav");
             topnav.classList.toggle("responsive");
             }
+        </script>
+        <script>
+            document.addEventListener('click', function(event) {
+        const topnav = document.getElementById("topnav");
+        const menuIcon = document.querySelector('.icon');
+        
+        // Check if the click is outside the navbar and the hamburger menu
+        if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
+            // If the menu is open, close it
+            if (topnav.classList.contains('responsive')) {
+                topnav.classList.remove('responsive');
+            }
+        }
+    });
         </script>
    </body>
 </html>

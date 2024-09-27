@@ -34,13 +34,16 @@
              </div>
            </div>
             </div>
-         <div class="topnav">
+         <div class="topnav" id="topnav">
           <a href="../home.html" target="_self">Home</a>
           <a href="../about.html" target="_self">About</a>
           <a href="../services.html" target="_self">Services</a>
           <a href="../portfolio.html" target="_self">Portfolio</a>
           <a href="../contact.html" target="_self">Contact</a>
           <a href="../contact.html#quoteForm" target="_self" class="right">Get a Quote</a>
+          <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            &#9776; <!-- This is the hamburger icon -->
+        </a>
          </div>
       </div>
       <h1 class="project-name"> Backyard Renovation </h1>
@@ -88,6 +91,27 @@
       </div>
       <div class="booknowbutton">
         <a href="../contact.html#quoteForm"><button class="booknow"> BOOK NOW </button></a>
-      </div>     
+      </div>
+      <script>
+         function toggleMenu() {
+         var topnav = document.getElementById("topnav");
+         topnav.classList.toggle("responsive");
+         }
+ 
+     </script>
+     <script>
+         document.addEventListener('click', function(event) {
+     const topnav = document.getElementById("topnav");
+     const menuIcon = document.querySelector('.icon');
+     
+     // Check if the click is outside the navbar and the hamburger menu
+     if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
+         // If the menu is open, close it
+         if (topnav.classList.contains('responsive')) {
+             topnav.classList.remove('responsive');
+         }
+     }
+ });
+     </script>     
    </body>
 </html>

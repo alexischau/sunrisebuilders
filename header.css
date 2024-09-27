@@ -122,10 +122,10 @@ body {
   .topnav a {
     display: none; /* Hide all links */
     width: 95%; /* Full width links on smaller screens */
-    text-align: right; /* Align text to the left */
-    padding: 10px 0; /* Padding for the links */
+    text-align: center; /* Align text to the left */
+    padding: 10px 10px; /* Padding for the links */
     margin: 0; /* No margin */
-    padding-right: 20px;
+    /* padding-right: 20px; add back if changing to right aligned*/ 
   }
 
   .topnav .icon {
