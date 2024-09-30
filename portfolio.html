@@ -46,9 +46,9 @@
         <p> What Work Would You Like to See?</p>
         <div class="portfolio-buttons">
           <a href="#homeremodel"><button class="clickable-portfolio"> Home Remodeling </button></a>
+          <a href="#commercialrenov"><button class="clickable-portfolio"> Commercial Renovation </button></a>
           <a href="#personalsign"><button class="clickable-portfolio"> Personalized Signs </button></a>
           <a href="#customfurn"><button class="clickable-portfolio"> Custom Furniture </button></a>
-          <a href="#commercialrenov"><button class="clickable-portfolio"> Commercial Renovation </button></a>
         </div>
         <p class="scroll"> Or scroll to explore past projects on your own </p>
         </div>
@@ -156,9 +156,6 @@
         displayImages(index, 'custom-slideshow'); 
         autoSlides('custom-slideshow');
     </script>
-    
-    
-    
       <script>
         document.querySelectorAll('.slider-link').forEach(link => {
         link.addEventListener('mousemove', function(e) {
@@ -205,10 +202,11 @@
                 portfolioTop.classList.add('bg-personal-sign');
             });
     
-            // customFurnButton.addEventListener('mouseover', () => {
-            //     portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-commercial-renovation');
-            //     portfolioTop.classList.add('bg-custom-furniture');
-            // });
+            customFurnButton.addEventListener('mouseover', () => {
+                portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-commercial-renovation');
+                // portfolioTop.classList.add('bg-custom-furniture');
+                portfolioTop.classList.add('bg-commercial-renovation');
+            });
     
             commercialRenovButton.addEventListener('mouseover', () => {
                 portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-custom-furniture');
@@ -224,24 +222,33 @@
     </script>
     
     <script>
-      function toggleMenu() {
-      var topnav = document.getElementById("topnav");
-      topnav.classList.toggle("responsive");
-      }
-  </script>
-  <script>
-    document.addEventListener('click', function(event) {
-const topnav = document.getElementById("topnav");
-const menuIcon = document.querySelector('.icon');
-
-// Check if the click is outside the navbar and the hamburger menu
-if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
-    // If the menu is open, close it
-    if (topnav.classList.contains('responsive')) {
-        topnav.classList.remove('responsive');
-    }
-}
-});
-</script>
+        function toggleMenu() {
+            var topnav = document.getElementById("topnav");
+            topnav.classList.toggle("responsive");
+        }
+    
+        document.addEventListener('click', function(event) {
+            const topnav = document.getElementById("topnav");
+            const menuIcon = document.querySelector('.icon');
+            
+            // Check if the click is outside the navbar and the hamburger menu
+            if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
+                // If the menu is open, close it
+                if (topnav.classList.contains('responsive')) {
+                    topnav.classList.remove('responsive');
+                }
+            }
+    
+            // Check if a menu item was clicked
+            if (topnav.contains(event.target) && event.target.tagName === 'A') {
+                // Check if this is the active link
+                if (event.target.classList.contains('active')) {
+                    // Reload the page if the active link is clicked
+                    location.reload();
+                }
+            }
+        });
+    </script>
+    
    </body>
 </html>

@@ -84,6 +84,7 @@ img {
   .slide-wrapper{
     flex-direction: column; /* Stack items vertically */
     align-items: center;
+    margin-top: 110px;
   }
   .left-text{
     order: -1;

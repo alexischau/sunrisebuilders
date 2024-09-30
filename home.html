@@ -102,24 +102,32 @@
     </script>
     <script>
         function toggleMenu() {
-        var topnav = document.getElementById("topnav");
-        topnav.classList.toggle("responsive");
+            var topnav = document.getElementById("topnav");
+            topnav.classList.toggle("responsive");
         }
-
-    </script>
-    <script>
-        document.addEventListener('click', function(event) {
-    const topnav = document.getElementById("topnav");
-    const menuIcon = document.querySelector('.icon');
     
-    // Check if the click is outside the navbar and the hamburger menu
-    if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
-        // If the menu is open, close it
-        if (topnav.classList.contains('responsive')) {
-            topnav.classList.remove('responsive');
-        }
-    }
-});
+        document.addEventListener('click', function(event) {
+            const topnav = document.getElementById("topnav");
+            const menuIcon = document.querySelector('.icon');
+            
+            // Check if the click is outside the navbar and the hamburger menu
+            if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
+                // If the menu is open, close it
+                if (topnav.classList.contains('responsive')) {
+                    topnav.classList.remove('responsive');
+                }
+            }
+    
+            // Check if a menu item was clicked
+            if (topnav.contains(event.target) && event.target.tagName === 'A') {
+                // Check if this is the active link
+                if (event.target.classList.contains('active')) {
+                    // Reload the page if the active link is clicked
+                    location.reload();
+                }
+            }
+        });
     </script>
+    
 </body>
 </html>

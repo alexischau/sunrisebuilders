@@ -7,7 +7,7 @@
       <link rel="stylesheet" type="text/css" href="home.css">
       <link rel="stylesheet" type="text/css" href="header.css">
       <link rel="stylesheet" type="text/css" href="services.css">
-      <title> Sunrise Builders </title>
+      <title> Services | Sunrise Builders </title>
    </head>
    <body>
       <div class="top">
@@ -26,12 +26,6 @@
                      <span class="contact-text">sunrisebuilders6618@gmail.com</span>
                  </a>
              </div>
-             <!-- <div class="location-link">
-                 <a href="https://maps.app.goo.gl/D6Cgjt5kq63nrQNz5">
-                     <img src="icons/maps-and-flags.png" class="clickable-icon">
-                     <span class="contact-text-end">3701 Old Santa Rita Rd. #18</span>
-                 </a>
-             </div> -->
            </div>
             </div>
          <div class="topnav" id="topnav">
@@ -52,15 +46,6 @@
            <p> Quality construction solutions tailored for your home and business needs.</p>
          </div>
          <div class="servicescontainer">
-           <a style="text-decoration: none;" href="portfolio.html#customfurn">
-           <div class="card">
-               <img class="cardicon" src="icons/sofa.png"></img>
-               <div class="cardtitle">
-                   <b>CUSTOM FURNITURE</b>
-               </div>
-               <p> Handcrafted furniture designed to match <br>your unique style and needs.</p>
-           </div>
-           </a>
            <a style="text-decoration: none;" href="portfolio.html#homeremodel">
            <div class="card">
                <img class="cardicon" src="icons/kitchen.png"></img>
@@ -70,6 +55,15 @@
                <p> Transform your living space with<br> expert renovations tailored to your lifestyle.</p>
            </div>
            </a>
+           <a style="text-decoration: none;" href="portfolio.html#commercialrenov">
+            <div class="card">
+             <img class="cardicon" src="icons/sketch.png"></img>
+             <div class="cardtitle">
+                 <b>COMMERICAL RENOVATION</b>
+             </div>
+             <p> Modernize your commercial property with <br>innovative upgrades that align with your business goals.</p>
+             </div>
+             </a>
            <a style="text-decoration: none;" href="portfolio.html#personalsign">
            <div class="card">
                <img class="cardicon" src="icons/hanging.png"></img>
@@ -79,36 +73,45 @@
                <p> Create custom signs to add a personal touch <br>to your home or business.</p>
            </div>
            </a>
-           <a style="text-decoration: none;" href="portfolio.html#commercialrenov">
-           <div class="card">
-            <img class="cardicon" src="icons/sketch.png"></img>
-            <div class="cardtitle">
-                <b>COMMERICAL RENOVATION</b>
-            </div>
-            <p> Modernize your commercial property with <br>innovative upgrades that align with your business goals.</p>
+           <a style="text-decoration: none;" href="portfolio.html#customfurn">
+            <div class="card">
+                <img class="cardicon" src="icons/sofa.png"></img>
+                <div class="cardtitle">
+                    <b>CUSTOM FURNITURE</b>
+                </div>
+                <p> Handcrafted furniture designed to match <br>your unique style and needs.</p>
             </div>
             </a>
            </div>
       </div>
       <script>
         function toggleMenu() {
-        var topnav = document.getElementById("topnav");
-        topnav.classList.toggle("responsive");
+            var topnav = document.getElementById("topnav");
+            topnav.classList.toggle("responsive");
         }
-    </script>
-    <script>
-        document.addEventListener('click', function(event) {
-    const topnav = document.getElementById("topnav");
-    const menuIcon = document.querySelector('.icon');
     
-    // Check if the click is outside the navbar and the hamburger menu
-    if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
-        // If the menu is open, close it
-        if (topnav.classList.contains('responsive')) {
-            topnav.classList.remove('responsive');
-        }
-    }
-});
+        document.addEventListener('click', function(event) {
+            const topnav = document.getElementById("topnav");
+            const menuIcon = document.querySelector('.icon');
+            
+            // Check if the click is outside the navbar and the hamburger menu
+            if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
+                // If the menu is open, close it
+                if (topnav.classList.contains('responsive')) {
+                    topnav.classList.remove('responsive');
+                }
+            }
+    
+            // Check if a menu item was clicked
+            if (topnav.contains(event.target) && event.target.tagName === 'A') {
+                // Check if this is the active link
+                if (event.target.classList.contains('active')) {
+                    // Reload the page if the active link is clicked
+                    location.reload();
+                }
+            }
+        });
     </script>
+    
    </body>
 </html>
