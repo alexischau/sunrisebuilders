@@ -13,7 +13,7 @@ a{
  .left-text {
     flex: 1; /* Takes up available space on the left */
     padding-right: 20px; /* Space between text and slideshow */
-    margin-bottom: 100px;
+    margin-bottom: 50px;
  }
  
 .image-slideshow {
@@ -65,6 +65,8 @@ img {
 .more{
   font-family: 'DM Sans', sans-serif;
   padding: 20px;
+  padding-left: 80px;
+  padding-right: 80px;
   color: black;
   margin-right: 20px;
   font-size: 20px;
@@ -84,7 +86,7 @@ img {
   .slide-wrapper{
     flex-direction: column; /* Stack items vertically */
     align-items: center;
-    margin-top: 110px;
+    margin-top: 20%;
   }
   .left-text{
     order: -1;
