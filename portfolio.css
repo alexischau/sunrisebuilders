@@ -5,14 +5,14 @@
 html { scroll-behavior: smooth; }
 
 .portfolio-page{
-    margin-top: 150px;
+    margin-top: 130px;
 }
 
 .portfolio-page h1{
     text-align: center;
     font-size: 50px;
     margin-bottom: 0;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .portfolio-page p{
@@ -50,8 +50,9 @@ html { scroll-behavior: smooth; }
 
 .section h1{
     font-size: 30px;
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
+    /* padding-left: 20px; */
+    padding-bottom: 10px;
 }
 
 .custom-image-slider {
@@ -98,6 +99,10 @@ html { scroll-behavior: smooth; }
     justify-content: center; /* Center items horizontally */
 }
 
+.image-slideshow .slider-link {
+    position: relative;
+    display: inline-block;
+}
 
 /* Tooltip styling */
 .tooltip-text {
@@ -116,6 +121,12 @@ html { scroll-behavior: smooth; }
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
+}
+
+/* Hover effect to show the tooltip */
+.image-slideshow .slider-link:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 
@@ -158,7 +169,7 @@ html { scroll-behavior: smooth; }
     position: relative;
     text-align: center;
     width: 100%; /* Full width of the container */
-    height: 500px; /* Adjust height as needed */
+    height: 600px; /* Adjust height as needed */
     background-size: cover;
     background-position: center;
     transition: background-image 0.5s ease-in-out;
@@ -192,11 +203,11 @@ html { scroll-behavior: smooth; }
 }
 
 .bg-home-remodel {
-    background-image: url('pictures/homerenov/backyard/backyardafter.jpg');
+    background-image: url('pictures/homerenov/backyard/backyard_8.jpg');
 }
 
 .bg-personal-sign {
-    background-image: url('pictures/personalsign/sunrisesign.JPG');
+    background-image: url('pictures/personalsign/sign_1.JPG');
 }
 
 .bg-custom-furniture {
@@ -204,7 +215,7 @@ html { scroll-behavior: smooth; }
 }
 
 .bg-commercial-renovation {
-    background-image: url('pictures/commercialrenov/ajuthespa/aju10.JPG');
+    background-image: url('pictures/commercialrenov/ajuthespa/aju_15.JPG');
 }
 
 @media (max-width: 980px) {
@@ -212,8 +223,13 @@ html { scroll-behavior: smooth; }
         padding-bottom: 600px;
     }
 
+    .portfolio-page p{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
     .portfolio-page .scroll {
-        margin-top: 100px;
+        margin-top: 80px;
         font-size: 15px;
     }
 
@@ -228,6 +244,7 @@ html { scroll-behavior: smooth; }
         grid-auto-rows: auto; /* Allows rows to grow with content */
         grid-gap: 30px;
         grid-auto-flow: dense;
+        padding: 30px;
     }
 
     .project-display{
@@ -242,6 +259,192 @@ html { scroll-behavior: smooth; }
     }
 
     .portfolio-page h1{
-        padding-top: 0px;
+        padding-top: 30px;
+    }
+    .portfolio-page{
+        margin-top: 28%;
     }
   }
+
+  .single-picture .project-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    /* font-weight: bold; */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease;
+    z-index: 10; /* Ensure the text stays on top */
+    text-align: center;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.single-picture:hover img {
+    filter: brightness(50%); /* Dim the image on hover */
+}
+
+.single-picture:hover .project-name {
+    opacity: 1; /* Make the project name visible on hover */
+}
+
+
+
+  .section_container {
+    display: flex;
+    gap: calc(8vw); /* Gap between grid items */
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%; /* Full width of the container */
+    justify-content: center;
+}
+
+.section_container h1{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.section_container .section {
+    flex: 1; /* Allows both sections to take equal space */
+}
+
+.section_container .project-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  a{
+    text-decoration: none;
+  }
+  
+  .slide-wrapper {
+      display: flex;
+      justify-content: space-between; /* Space between the text and slideshow */
+      align-items: center; /* Vertically align items */
+      padding: 20px; /* Optional padding around the content */
+      margin-top: 150px;
+   }
+   
+   .left-text {
+      flex: 1; /* Takes up available space on the left */
+      padding-right: 20px; /* Space between text and slideshow */
+      margin-bottom: 100px;
+   }
+   
+  .image-slideshow {
+    display: flex; /* Ensure the slideshow images are flex items */
+    justify-content: center; /* Center the slideshow */
+    align-items: center; /* Align items vertically */
+    gap: 2vw; /* Adjust the gap between images as needed */
+    max-width: 700px;
+    position: relative;
+    margin: auto;
+  }
+  img {
+    width: 100%
+  }
+  .fade {
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+  @keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+  }
+  
+  .image-slideshow {
+    display: flex; /* Ensures slideshow images are flex items */
+    justify-content: center; /* Centers the slideshow */
+    align-items: center; /* Align items vertically */
+    gap: 2vw; /* Gap between images */
+    max-width: 700px;
+    position: relative; /* Make it the reference for absolute positioning */
+    margin: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 55%; /* Center vertically */
+    transform: translateY(-50%); /* Correct vertical positioning */
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    z-index: 10; /* Ensure they're above everything else */
+}
+
+.next {
+    right: 0; /* Position next arrow on the right */
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0; /* Position prev arrow on the left */
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+  
+  .more{
+    font-family: 'DM Sans', sans-serif;
+    padding: 20px;
+    color: black;
+    margin-right: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-width: 1px;
+    text-decoration: none;
+    border-color: black;
+  }
+  
+  .more:hover {
+    background-color: #cfcfcf;
+    color: black;
+    }
+  
+  @media (max-width: 980px) {
+    .slide-wrapper{
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+    }
+    .left-text{
+      order: -1;
+      margin-bottom: 30px;
+    }
+    .image-slideshow{
+      order: 0;
+    }
+    .more{
+      order:1;
+      text-decoration: none;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  
+    .left-text {
+      font-size: 15px;
+   }
+  }
+
+  @media (max-width: 980px) {
+    .section_container {
+        flex-direction: column; /* Stack sections vertically */
+        gap: 20px; /* Adjust gap between sections */
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .section_container .section {
+        width: 100%; /* Full width when stacked */
+        margin-bottom: 20px; /* Optional: Add space between stacked sections */
+    }
+}

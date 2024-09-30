@@ -26,12 +26,6 @@
                   <span class="contact-text">sunrisebuilders6618@gmail.com</span>
               </a>
           </div>
-          <div class="location-link">
-              <a href="https://maps.app.goo.gl/D6Cgjt5kq63nrQNz5">
-                  <img src="icons/maps-and-flags.png" class="clickable-icon">
-                  <span class="contact-text-end">3701 Old Santa Rita Rd. #18</span>
-              </a>
-          </div>
         </div>
          </div>
          <div class="topnav" id="topnav">
@@ -65,7 +59,7 @@
                 <div class="single-picture">
                     <a href="homerenovpages/backyardproject.html" class="slider-link">
                         <img class="slider-before" src="pictures/homerenov/backyard/backyard_8.jpg">
-                        <span class="tooltip-text">Click for More</span>
+                        <span class="project-name">Background Renovation</span>
                     </a>
                 </div>
             </div>
@@ -78,47 +72,93 @@
                 <div class="single-picture">
                     <a href="commericalrenovpages/ajuthespa.html" class="slider-link">
                         <img class="slider-before" src="pictures/commercialrenov/ajuthespa/aju_15.JPG">
-                        <span class="tooltip-text">Click for More</span>
+                        <span class="project-name">Aju The Spa</span>
                     </a>
                 </div>
             </div>
-          </div>       
+          </div>      
         </div>
+        <div class="section_container">
         <div class="section" id="personalsign">
           <h1>Personalized Signs </h1>
-          <div class="project-display">
-            <div class="single-project">
-                <div class="single-picture">
-                    <a href="personalsignpages/sunrisesign.html" class="slider-link">
-                        <img src="pictures/personalsign/sunrisesign.JPG">
-                        <span class="tooltip-text">Click for More</span>
-                    </a>
-                </div>
+          <div class="image-slideshow" id="personal-slideshow">
+            <a class="prev" onclick="plusSlides(-1, 'personal-slideshow')">&#10094;</a>
+            <div class="image fade">
+              <a href="signandfurniture/personalsign.html" class="slider-link">
+                <img src="pictures/personalsign/sign_1.JPG">
+                <span class="tooltip-text">Click for More</span>
+            </a>
             </div>
-            <div class="single-project">
-              <div class="single-picture">
-                  <a href="personalsignpages/ajusign.html" class="slider-link">
-                      <img src="pictures/personalsign/ajusign.JPG">
-                      <span class="tooltip-text">Click for More</span>
-                  </a>
-              </div>
+            <div class="image fade">
+              <a href="signandfurniture/personalsign.html" class="slider-link">
+                <img src="pictures/personalsign/sign_2.JPG">
+                <span class="tooltip-text">Click for More</span>
+            </a>
             </div>
-          </div>       
+            <a class="next" onclick="plusSlides(1, 'personal-slideshow')">&#10095;</a>
+        </div>
         </div>
         <div class="section" id="customfurn">
           <h1>Custom Furniture</h1>
-          <div class="project-display">
-            <div class="single-project">
-                <div class="single-picture">
-                    <a href="personalsignpages/sunrisesign.html" class="slider-link">
-                        <img src="pictures/personalsign/sunrisesign.JPG">
-                        <span class="tooltip-text">Click for More</span>
-                    </a>
-                </div>
+          <!-- <div class="image-slideshow" id="custom-slideshow">
+            <a class="prev" onclick="plusSlides(-1, 'custom-slideshow')">&#10094;</a>
+            <div class="image fade">
+                <img src="pictures/slideshow/chairandmirror.jpg" alt="Custom Furniture 1">
             </div>
-          </div>       
+            <div class="image fade">
+                <img src="pictures/slideshow/chairandmirror.jpg" alt="Custom Furniture 2">
+            </div>
+            <div class="image fade">
+                <img src="pictures/slideshow/chairandmirror.jpg" alt="Custom Furniture 3">
+            </div>
+            <a class="next" onclick="plusSlides(1, 'custom-slideshow')">&#10095;</a>
+        </div> -->
+        <p> Coming Soon </p>
         </div>
       </div>
+      </div>
+      <script>
+        let index = 0; // Declare a global index for tracking the current image in the slideshow
+    
+        function displayImages(n, slideshowId) {
+            const images = document.getElementById(slideshowId).getElementsByClassName("image");
+    
+            if (n >= images.length) {
+                index = 0;
+            } 
+            if (n < 0) {
+                index = images.length - 1;
+            }
+    
+            // Hide all images
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = "none"; 
+            }
+            images[index].style.display = "block"; // Show the current image
+        }
+    
+        function plusSlides(n, slideshowId) {
+            index += n; // Update the global index
+            displayImages(index, slideshowId); // Display the new image
+        }
+    
+        // Auto slide function
+        function autoSlides(slideshowId) {
+            setInterval(() => {
+                index++;
+                displayImages(index, slideshowId); // Change image every 8 seconds
+            }, 8000); // Change image every 8 seconds
+        }
+    
+        // Initialize auto slides for the first slideshow
+        displayImages(index, 'personal-slideshow'); 
+        autoSlides('personal-slideshow'); 
+        displayImages(index, 'custom-slideshow'); 
+        autoSlides('custom-slideshow');
+    </script>
+    
+    
+    
       <script>
         document.querySelectorAll('.slider-link').forEach(link => {
         link.addEventListener('mousemove', function(e) {
@@ -145,37 +185,44 @@
 
       </script>
       <script>
-        const portfolioTop = document.querySelector('.portfolio-top');
-        const homeRemodelButton = document.querySelector('a[href="#homeremodel"] button');
-        const personalSignButton = document.querySelector('a[href="#personalsign"] button');
-        const customFurnButton = document.querySelector('a[href="#customfurn"] button');
-        const commercialRenovButton = document.querySelector('a[href="#commercialrenov"] button');
+        document.addEventListener("DOMContentLoaded", () => {
+            const portfolioTop = document.querySelector('.portfolio-top');
+            const homeRemodelButton = document.querySelector('a[href="#homeremodel"] button');
+            const personalSignButton = document.querySelector('a[href="#personalsign"] button');
+            const customFurnButton = document.querySelector('a[href="#customfurn"] button');
+            const commercialRenovButton = document.querySelector('a[href="#commercialrenov"] button');
     
-        homeRemodelButton.addEventListener('mouseover', () => {
-            portfolioTop.classList.remove('bg-personal-sign', 'bg-custom-furniture', 'bg-commercial-renovation');
-            portfolioTop.classList.add('bg-home-remodel');
-        });
-    
-        personalSignButton.addEventListener('mouseover', () => {
-            portfolioTop.classList.remove('bg-home-remodel', 'bg-custom-furniture', 'bg-commercial-renovation');
-            portfolioTop.classList.add('bg-personal-sign');
-        });
-    
-        customFurnButton.addEventListener('mouseover', () => {
-            portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-commercial-renovation');
-            portfolioTop.classList.add('bg-custom-furniture');
-        });
-    
-        commercialRenovButton.addEventListener('mouseover', () => {
-            portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-custom-furniture');
+            // Set the default background to the home-remodel image on page load
             portfolioTop.classList.add('bg-commercial-renovation');
-        });
     
-        // Optional: Reset background when mouse leaves any button
-        document.querySelector('.portfolio-buttons').addEventListener('mouseleave', () => {
-            portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-custom-furniture', 'bg-commercial-renovation');
+            homeRemodelButton.addEventListener('mouseover', () => {
+                portfolioTop.classList.remove('bg-personal-sign', 'bg-custom-furniture', 'bg-commercial-renovation');
+                portfolioTop.classList.add('bg-home-remodel');
+            });
+    
+            personalSignButton.addEventListener('mouseover', () => {
+                portfolioTop.classList.remove('bg-home-remodel', 'bg-custom-furniture', 'bg-commercial-renovation');
+                portfolioTop.classList.add('bg-personal-sign');
+            });
+    
+            // customFurnButton.addEventListener('mouseover', () => {
+            //     portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-commercial-renovation');
+            //     portfolioTop.classList.add('bg-custom-furniture');
+            // });
+    
+            commercialRenovButton.addEventListener('mouseover', () => {
+                portfolioTop.classList.remove('bg-home-remodel', 'bg-personal-sign', 'bg-custom-furniture');
+                portfolioTop.classList.add('bg-commercial-renovation');
+            });
+    
+            // Reset to the default home-remodel background when the mouse leaves the buttons
+            document.querySelector('.portfolio-buttons').addEventListener('mouseleave', () => {
+                portfolioTop.classList.remove('bg-personal-sign', 'bg-custom-furniture', 'bg-commercial-renovation');
+                portfolioTop.classList.add('bg-commercial-renovation');
+            });
         });
     </script>
+    
     <script>
       function toggleMenu() {
       var topnav = document.getElementById("topnav");

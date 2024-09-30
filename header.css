@@ -103,6 +103,8 @@ body {
       height: auto; /* Allow height to adjust based on content */
       flex-direction: column; /* Stack header items vertically */
       align-items: center; /* Align items to the left */
+      width: 100%;
+      margin-left: 0;
   }
 
   .header a.logo {
