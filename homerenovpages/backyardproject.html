@@ -49,22 +49,27 @@
       <h1 class="project-name"> Backyard Renovation </h1>
       <div class="photo-gallery">
         <div class="large-image-container">
-          <img id="largeImage" src="../pictures/homerenov/backyard/by5.jpg" alt="Selected Image">
+          <img id="largeImage" src="../pictures/homerenov/backyard/backyard_1.jpg" alt="Selected Image">
           <div class="prev">&#10094;</div>
           <div class="next">&#10095;</div>
         </div>
         <div class="thumbnail-container">
-          <img class="thumbnail" src="../pictures/homerenov/backyard/by5.jpg" onclick="changeImage('../pictures/homerenov/backyard/by5.jpg')">
-          <img class="thumbnail" src="../pictures/homerenov/backyard/by6.jpg" onclick="changeImage('../pictures/homerenov/backyard/by6.jpg')">
-          <img class="thumbnail" src="../pictures/homerenov/backyard/by1.jpg" onclick="changeImage('../pictures/homerenov/backyard/by1.jpg')">
+          <img class="thumbnail" src="../pictures/homerenov/backyard/backyard_1.jpg" onclick="changeImage('../pictures/homerenov/backyard/backyard_1.jpg')">
+          <img class="thumbnail" src="../pictures/homerenov/backyard/backyard_2.jpg" onclick="changeImage('../pictures/homerenov/backyard/backyard_2.jpg')">
+          <img class="thumbnail" src="../pictures/homerenov/backyard/backyard_3.jpg" onclick="changeImage('../pictures/homerenov/backyard/backyard_3.jpg')">
+          <img class="thumbnail" src="../pictures/homerenov/backyard/backyard_4.jpg" onclick="changeImage('../pictures/homerenov/backyard/backyard_4.jpg')">
+          <img class="thumbnail" src="../pictures/homerenov/backyard/backyard_5.jpg" onclick="changeImage('../pictures/homerenov/backyard/backyard_5.jpg')">
+          <img class="thumbnail" src="../pictures/homerenov/backyard/backyard_6.jpg" onclick="changeImage('../pictures/homerenov/backyard/backyard_6.jpg')">
+          <img class="thumbnail" src="../pictures/homerenov/backyard/backyard_7.jpg" onclick="changeImage('../pictures/homerenov/backyard/backyard_7.jpg')">
+          <img class="thumbnail" src="../pictures/homerenov/backyard/backyard_8.jpg" onclick="changeImage('../pictures/homerenov/backyard/backyard_8.jpg')">
         </div>
         <script>
          const largeImage = document.getElementById('largeImage');
          const images = [];
 
-         const pic_nums = [5, 6, 1];
-         for (let i = 0; i < pic_nums.length; i++) {
-            const pic_path = "../pictures/homerenov/backyard/by" + pic_nums[i] + ".jpg";
+        //  const pic_nums = [5, 6, 1];
+         for (let i = 0; i < 8; i++) {
+            const pic_path = "../pictures/homerenov/backyard/backyard_" + (i+1) + ".jpg";
             images.push(pic_path);
          }
 
