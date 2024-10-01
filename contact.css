@@ -112,6 +112,7 @@ body {
   border-radius: 8px; /* Optional rounded corners */
   background-color: #fff; /* Background color */
   box-sizing: border-box; /* Ensures padding doesn't affect width */
+  color: black;
 }
 
 /* Optionally style the options inside the select box */
