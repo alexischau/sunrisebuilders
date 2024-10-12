@@ -5,32 +5,32 @@ body {
 }
 
 .header, .topnav {
-  box-sizing: content-box; /* Override box-sizing for header and topnav */
+  box-sizing: content-box; 
 }
 
 .top {
   z-index: 1000;
-  position: fixed; /* Fix the navbar at the top */
+  position: fixed; 
   top: 0;
   width: 100%;
 }
 
 .clickable-icon {
-  width: 20px; /* Responsive image size */
+  width: 20px; 
   height: auto;
   vertical-align: middle;
 }
 
 .header {
   display: flex;
-  justify-content: space-between; /* Spread logo to the left and header-right to the right */
-  align-items: center; /* Center items vertically */
+  justify-content: space-between; 
+  align-items: center; 
   background-color: #ffffff;
   padding: 5px 5px;
   margin-left: 5px;
   margin-right: 5px;
   height: 60px;
-  flex-wrap: wrap; /* Allows wrapping of flex items */
+  flex-wrap: wrap; 
 }
 
 .header a {
@@ -44,31 +44,30 @@ body {
   font-weight: bold;
 }
 
-/* Ensure the header links do not interfere with the vertical alignment of .header-right */
 .header-right {
   display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: flex-end; /* Align items to the right */
-  gap: 15px; /* Adjust spacing between the image and text */
+  align-items: center; 
+  justify-content: flex-end; 
+  gap: 15px;
   height: 100%;
-  flex-wrap: wrap; /* Allows wrapping of flex items */
+  flex-wrap: wrap; 
 }
 
 .header-right a {
-  display: flex; /* Make the <a> tag fit the image precisely */
-  align-items: center; /* Center image vertically */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  width: auto; /* Ensure the <a> tag width matches the image */
+  display: flex; 
+  align-items: center; 
+  padding: 0; 
+  margin: 0; 
+  width: auto; 
   height: auto;
 }
 
 .topnav {
   background-color: #3f3f3f;
   display: flex;
-  justify-content: flex-start; /* Align items to the start (left) */
+  justify-content: flex-start; 
   align-items: center;
-  flex-wrap: wrap; /* Allows wrapping of flex items */
+  flex-wrap: wrap; 
 }
 
 .topnav a {
@@ -90,24 +89,22 @@ body {
 }
 
 .topnav .right {
-  margin-left: auto; /* Pushes the button to the right */
+  margin-left: auto; 
 }
 
 .contact-text, .contact-text-end {
-  margin-left: 5px; /* Adjust this value to increase or decrease spacing */
+  margin-left: 5px; 
 }
 
 .topnav .icon {
   display: none;
 }
 
-
-/* Media query for smaller screens */
 @media (max-width: 980px) {
   .header {
-      height: auto; /* Allow height to adjust based on content */
-      flex-direction: column; /* Stack header items vertically */
-      align-items: center; /* Align items to the left */
+      height: auto; 
+      flex-direction: column; 
+      align-items: center; 
       width: 100%;
       margin-left: 0;
   }
@@ -118,7 +115,7 @@ body {
   }
 
   .header-right {
-      display: none; /* Hide header-right on smaller screens */
+      display: none; 
   }
   
   .topnav{
@@ -127,16 +124,15 @@ body {
   }
 
   .topnav a {
-    display: none; /* Hide all links */
-    width: 95%; /* Full width links on smaller screens */
-    text-align: center; /* Align text to the left */
-    padding: 10px 10px; /* Padding for the links */
-    margin: 0; /* No margin */
-    /* padding-right: 20px; add back if changing to right aligned*/ 
+    display: none; 
+    width: 95%;
+    text-align: center; 
+    padding: 10px 10px; 
+    margin: 0; 
   }
 
   .topnav .icon {
-    display: block; /* Show the hamburger icon */
+    display: block; 
     font-size: 30px;
     color: #f2f2f2;
     padding: 10px;
@@ -144,11 +140,11 @@ body {
   }
 
   .topnav.responsive {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; 
   }
 
   .topnav.responsive a {
-    display: block; /* Show links when toggled */
+    display: block;
   }
 
   .topnav a.right {
@@ -156,8 +152,8 @@ body {
   }
 
   .topnav a:hover {
-    background-color: transparent; /* Use 'transparent' instead of 'none' */
-    color: white; /* Maintain the original text color */
+    background-color: transparent;
+    color: white;
   }
 
 }

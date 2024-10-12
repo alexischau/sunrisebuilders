@@ -24,17 +24,25 @@ html { scroll-behavior: smooth; }
 
 .portfolio-buttons{
     display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 70px; /* Space between the buttons */
+    justify-content: center; 
+    gap: 70px; 
     padding: 10px;
 }
 
-.clickable-portfolio{
+.clickable-portfolio {
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 30px;
     border-width: 1.5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f77f00;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .portfolio-page .scroll {
@@ -43,25 +51,34 @@ html { scroll-behavior: smooth; }
 }
 
 .clickable-portfolio:hover {
-    background-color: #ddd;
+    background-color: #de7200;
     color: black;
     cursor: pointer;
+}
+
+.portfolio-top {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 600px; 
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.portfolio-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .section h1{
     font-size: 30px;
     text-align: center;
-    /* padding-left: 20px; */
     padding-bottom: 10px;
 }
-
-.custom-image-slider {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 75%; 
-    
-  }
 
 #homeremodel {
     padding-top: 100px; 
@@ -83,20 +100,20 @@ html { scroll-behavior: smooth; }
 
 .single-project{
     display: flex;
-    justify-content: center; /* Horizontally center the image */
-    align-items: center; /* Vertically center the image */
-    height: 100%; /* Ensure the single-project fills the grid cell */
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
 }
 
 .project-display {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
-    gap: calc(8vw); /* Gap between grid items */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: calc(8vw); 
     padding: 2%;
     padding-left: 5%;
     padding-right: 5%;
-    width: 100%; /* Full width of the container */
-    justify-content: center; /* Center items horizontally */
+    width: 100%;
+    justify-content: center; 
 }
 
 .image-slideshow .slider-link {
@@ -104,7 +121,6 @@ html { scroll-behavior: smooth; }
     display: inline-block;
 }
 
-/* Tooltip styling */
 .tooltip-text {
     visibility: hidden;
     width: 130px;
@@ -116,24 +132,22 @@ html { scroll-behavior: smooth; }
     padding: 8px;
     position: absolute;
     z-index: 2000;
-    bottom: 100%; /* Positioned directly above the image */
+    bottom: 100%; 
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
 }
 
-/* Hover effect to show the tooltip */
 .image-slideshow .slider-link:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
 
-
 .single-picture {
     width: 100%;
-    max-width: 100%; /* Ensure images don't exceed container width */
-    padding-bottom: 75%; /* Maintain aspect ratio */
+    max-width: 100%;
+    padding-bottom: 75%; 
     position: relative;
 }
 
@@ -143,59 +157,30 @@ html { scroll-behavior: smooth; }
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the container while maintaining aspect ratio */
-    display: block; /* Remove any extra space below the image */
+    object-fit: cover; 
+    display: block; 
 }
 
-.single-picture .tooltip-text {
-    visibility: hidden;
-    width: 140px;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px;
+.single-picture .project-name {
     position: absolute;
-    z-index: 2000;
-    white-space: nowrap;
-    transition: opacity 0.3s;
-    opacity: 0;
-    bottom: 120%; /* Adjust based on desired tooltip position */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-}
-
-.portfolio-top {
-    position: relative;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+    z-index: 10; 
     text-align: center;
-    width: 100%; /* Full width of the container */
-    height: 600px; /* Adjust height as needed */
-    background-size: cover;
-    background-position: center;
-    transition: background-image 0.5s ease-in-out;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap; 
 }
 
-.portfolio-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.single-picture:hover img {
+    filter: brightness(50%); 
 }
 
-.clickable-portfolio {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: #f77f00;
-    color: white;
-    border: none;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.clickable-portfolio:hover {
-    background-color: #de7200;
+.single-picture:hover .project-name {
+    opacity: 1; 
 }
 
 .scroll {
@@ -204,25 +189,124 @@ html { scroll-behavior: smooth; }
 
 .bg-home-remodel {
     background-image: url('pictures/homerenov/backyard/backyard_8.jpg');
+    height: 550px;
 }
 
 .bg-personal-sign {
     background-image: url('pictures/personalsign/sign_1.JPG');
+    height: 550px;
 }
 
 .bg-custom-furniture {
     background-image: url('pictures/personalsign/ajusign.JPG');
+    height: 550px;
 }
 
 .bg-commercial-renovation {
     background-image: url('pictures/commercialrenov/ajuthespa/aju_15.JPG');
+    height: 550px;
+}
+
+.section_container {
+    display: flex;
+    gap: calc(8vw); 
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%; 
+    justify-content: center;
+}
+
+.section_container h1{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.section_container .section {
+    flex: 1; 
+}
+
+.section_container .project-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+text-decoration: none;
+}
+  
+.slide-wrapper {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px; 
+    margin-top: 150px;
+}
+
+.image-slideshow {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 2vw; 
+    max-width: 700px;
+    position: relative;
+    margin: auto;
+}
+img {
+    width: 100%
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 55%; 
+    transform: translateY(-50%); 
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    z-index: 10; 
+}
+
+.next {
+    right: 0; 
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0; 
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.more{
+    font-family: 'DM Sans', sans-serif;
+    padding: 20px;
+    color: black;
+    margin-right: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-width: 1px;
+    text-decoration: none;
+    border-color: black;
+}
+
+.more:hover {
+    background-color: #cfcfcf;
+    color: black;
 }
 
 @media (max-width: 980px) {
-    .portfolio-top {
-        padding-bottom: 600px;
-    }
-
     .portfolio-page p{
         padding-left: 5%;
         padding-right: 5%;
@@ -240,8 +324,8 @@ html { scroll-behavior: smooth; }
 
     .portfolio-buttons{
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        grid-auto-rows: auto; /* Allows rows to grow with content */
+        grid-template-columns: repeat(2, 1fr); 
+        grid-auto-rows: auto; 
         grid-gap: 30px;
         grid-auto-flow: dense;
         padding: 30px;
@@ -261,190 +345,34 @@ html { scroll-behavior: smooth; }
     .portfolio-page h1{
         padding-top: 30px;
     }
+
     .portfolio-page{
         margin-top: 28%;
     }
-  }
 
-  .single-picture .project-name {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 24px;
-    /* font-weight: bold; */
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.5s ease;
-    z-index: 10; /* Ensure the text stays on top */
-    text-align: center;
-    white-space: nowrap; /* Prevents text from wrapping */
-}
-
-.single-picture:hover img {
-    filter: brightness(50%); /* Dim the image on hover */
-}
-
-.single-picture:hover .project-name {
-    opacity: 1; /* Make the project name visible on hover */
-}
-
-
-
-  .section_container {
-    display: flex;
-    gap: calc(8vw); /* Gap between grid items */
-    padding: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 100%; /* Full width of the container */
-    justify-content: center;
-}
-
-.section_container h1{
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-.section_container .section {
-    flex: 1; /* Allows both sections to take equal space */
-}
-
-.section_container .project-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-  a{
-    text-decoration: none;
-  }
-  
-  .slide-wrapper {
-      display: flex;
-      justify-content: space-between; /* Space between the text and slideshow */
-      align-items: center; /* Vertically align items */
-      padding: 20px; /* Optional padding around the content */
-      margin-top: 150px;
-   }
-   
-   .left-text {
-      flex: 1; /* Takes up available space on the left */
-      padding-right: 20px; /* Space between text and slideshow */
-      margin-bottom: 100px;
-   }
-   
-  .image-slideshow {
-    display: flex; /* Ensure the slideshow images are flex items */
-    justify-content: center; /* Center the slideshow */
-    align-items: center; /* Align items vertically */
-    gap: 2vw; /* Adjust the gap between images as needed */
-    max-width: 700px;
-    position: relative;
-    margin: auto;
-  }
-  img {
-    width: 100%
-  }
-  .fade {
-    animation-name: fade;
-    animation-duration: 2s;
-  }
-  @keyframes fade {
-    from {opacity: .5}
-    to {opacity: 1}
-  }
-  
-  .image-slideshow {
-    display: flex; /* Ensures slideshow images are flex items */
-    justify-content: center; /* Centers the slideshow */
-    align-items: center; /* Align items vertically */
-    gap: 2vw; /* Gap between images */
-    max-width: 700px;
-    position: relative; /* Make it the reference for absolute positioning */
-    margin: auto;
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 55%; /* Center vertically */
-    transform: translateY(-50%); /* Correct vertical positioning */
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    z-index: 10; /* Ensure they're above everything else */
-}
-
-.next {
-    right: 0; /* Position next arrow on the right */
-    border-radius: 3px 0 0 3px;
-}
-
-.prev {
-    left: 0; /* Position prev arrow on the left */
-    border-radius: 0 3px 3px 0;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-  
-  .more{
-    font-family: 'DM Sans', sans-serif;
-    padding: 20px;
-    color: black;
-    margin-right: 20px;
-    font-size: 20px;
-    border-radius: 10px;
-    border-width: 1px;
-    text-decoration: none;
-    border-color: black;
-  }
-  
-  .more:hover {
-    background-color: #cfcfcf;
-    color: black;
-    }
-  
-  @media (max-width: 980px) {
     .slide-wrapper{
-      flex-direction: column; /* Stack items vertically */
-      align-items: center;
-    }
-    .left-text{
-      order: -1;
-      margin-bottom: 30px;
+        flex-direction: column; 
+        align-items: center;
     }
     .image-slideshow{
-      order: 0;
+        order: 0;
     }
     .more{
-      order:1;
-      text-decoration: none;
-      font-size: 18px;
-      margin-bottom: 30px;
+        order:1;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 30px;
     }
-  
-    .left-text {
-      font-size: 15px;
-   }
-  }
 
-  @media (max-width: 980px) {
     .section_container {
-        flex-direction: column; /* Stack sections vertically */
-        gap: 20px; /* Adjust gap between sections */
+        flex-direction: column;
+        gap: 20px; 
         padding-left: 10%;
         padding-right: 10%;
     }
 
     .section_container .section {
-        width: 100%; /* Full width when stacked */
-        margin-bottom: 20px; /* Optional: Add space between stacked sections */
+        width: 100%; 
+        margin-bottom: 20px; 
     }
 }

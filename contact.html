@@ -71,12 +71,10 @@
                 
                 <button type="submit">Send</button>
             </form>
-   
             <div id="formSuccessMessage" style="display:none;">Thank you for your submission! We will contact you soon.</div>
-   
             <script>
             document.getElementById('quoteForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
             var form = event.target;
             var formData = new FormData(form);
     
@@ -96,8 +94,8 @@
             });
             });
             </script>
-         </div>
-         <div class="contact-info">
+        </div>
+        <div class="contact-info">
             <h1>CONTACT US</h1>
             <div class="contact-container">
                 <a href="tel:9255236618">
@@ -112,10 +110,8 @@
                 </a>
             </div>
             <div class="contact-container">
-                <!-- <a href="https://maps.app.goo.gl/D6Cgjt5kq63nrQNz5"> -->
-                    <img src="icons/maps-and-flags.png" class="clickable-icon">
-                    <span class="contact-text-end">Pleasanton, CA</span>
-                <!-- </a> -->
+                <img src="icons/maps-and-flags.png" class="clickable-icon">
+                <span class="contact-text-end">Pleasanton, CA</span>
             </div>
             <div class="contact-container">
                 <a href="https://www.instagram.com/sunrisebuildersca/">
@@ -123,9 +119,10 @@
                     <span class="contact-text-end">@sunrisebuildersca</span>
                 </a>
             </div>
-         </div>
+        </div>
       </div>
       <script>
+        // hamburger menu when mobile view
         function toggleMenu() {
             var topnav = document.getElementById("topnav");
             topnav.classList.toggle("responsive");
@@ -135,34 +132,30 @@
             const topnav = document.getElementById("topnav");
             const menuIcon = document.querySelector('.icon');
             
-            // Check if the click is outside the navbar and the hamburger menu
+            // close navbar if clicking outside of it
             if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
-                // If the menu is open, close it
                 if (topnav.classList.contains('responsive')) {
                     topnav.classList.remove('responsive');
                 }
             }
     
-            // Check if a menu item was clicked
+            // reload same page if active page reclicked
             if (topnav.contains(event.target) && event.target.tagName === 'A') {
-                // Check if this is the active link
                 if (event.target.classList.contains('active')) {
-                    // Reload the page if the active link is clicked
                     location.reload();
                 }
             }
         });
     </script>
     <script>
+        // close menu when 'get a quote' is clicked
         const getQuoteLink = document.querySelector('.topnav a[href*="quoteForm"]');
-
-// Add a click event to close the menu when "Get a Quote" is clicked
-getQuoteLink.addEventListener('click', function() {
-    const topnav = document.getElementById("topnav");
-    if (topnav.classList.contains('responsive')) {
-        topnav.classList.remove('responsive'); // Close the menu
-    }
-});
+        getQuoteLink.addEventListener('click', function() {
+            const topnav = document.getElementById("topnav");
+            if (topnav.classList.contains('responsive')) {
+                topnav.classList.remove('responsive'); 
+            }
+        });
     </script>
    </body>
 </html>

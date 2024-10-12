@@ -1,79 +1,79 @@
-/* Body styling */
+a{
+  text-decoration: none;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'DM Sans', sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+}
   
-  /* Form Container Styling */
-  .form-container {
-    background-color: #fefefe;
-    margin: 20px auto;
-    margin-left: 20px;
-    padding: 20px;
-    border: 1px solid #888;
-    border-radius: 10px; /* Rounded corners */
-    width: 90%; /* Full width with some margin */
-    max-width: 600px; /* Maximum width */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
-    margin-top: 170px;
-    flex: 1; /* Allow the form container to grow and fill available space */
-    margin-right: 100px; /* Add space between the form and contact info */
-  }
-  .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-  }
+.form-container {
+  background-color: #fefefe;
+  margin: 20px auto;
+  margin-left: 20px;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px; 
+  width: 90%; 
+  max-width: 600px; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  margin-top: 170px;
+  flex: 1;
+  margin-right: 100px; 
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
 
-  .contact-info {
-    margin-top: 170px;
-    margin-right: 20px;
-    padding: 20px; /* Add some padding for better visibility */
-    flex: 1; /* Allow it to grow and fill available space */
-    /* border: 1px solid black;  */
-  }
+.contact-info {
+  margin-top: 170px;
+  margin-right: 20px;
+  padding: 20px; 
+  flex: 1; 
+}
 
-  /* Form Styling */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  form label {
-    margin-top: 10px;
-  }
-  
-  form input,
-  form textarea {
-    font-family: 'DM Sans', sans-serif;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px; /* Rounded corners */
-    width: 100%;
-    box-sizing: border-box; /* Include padding in width */
-  }
-  
-  form textarea {
-    resize: vertical; /* Allow vertical resizing */
-    min-height: 100px; /* Minimum height for textarea */
-  }
-  
-  form button {
-    font-family: 'DM Sans', sans-serif;
-    background-color: #F77F00;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 8px; /* Rounded corners for button */
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #de7200;
-  }
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input,
+form textarea {
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+form textarea {
+  resize: vertical; 
+  min-height: 100px; 
+}
+
+form button {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #F77F00;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #de7200;
+}
   
 .redask:after {
   color: #e32;
@@ -104,38 +104,37 @@ body {
 }
 
 #referral {
-  width: 100%; /* Makes the select box take full width */
-  padding: 8px; /* Adjust padding */
-  font-size: 16px; /* Changes font size inside the select box */
+  width: 100%; 
+  padding: 8px; 
+  font-size: 16px; 
   font-family: 'DM Sans', sans-serif;
-  border: 1px solid #ccc; /* Optional border styling */
-  border-radius: 8px; /* Optional rounded corners */
-  background-color: #fff; /* Background color */
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  background-color: #fff; 
+  box-sizing: border-box; 
   color: black;
 }
 
-/* Optionally style the options inside the select box */
 #referral option {
-  font-size: 16px; /* Font size for options */
+  font-size: 16px; 
   font-family: 'DM Sans', sans-serif;
 }
 
 @media (max-width: 980px) {
   .content {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column; 
+    align-items: center; 
   }
 
   .contact-info {
-    order: -1; /* Move contact-info above the form-container */
+    order: -1; 
     margin-top: 120px;
-    width: 80%; /* Make it full width */
+    width: 80%; 
   }
 
   .form-container {
     margin-top: 20px;
     margin-left: 100px;
-    width: 80%; /* Make it full width */
+    width: 80%; 
   }
 }

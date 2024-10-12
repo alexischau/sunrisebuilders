@@ -29,11 +29,11 @@
         margin-top: 150px;
     }
     .dadpic {
-        float: none; /* Remove the float */
-        margin: 0 auto; /* Center the image */
+        float: none;
+        margin: 0 auto; 
         display: block;
-        width: 100%; /* Adjust the width if needed */
-        max-width: 400px; /* Set a max width to prevent it from being too large */
+        width: 100%; 
+        max-width: 400px; 
         margin-bottom: 20px;
     }
 

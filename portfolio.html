@@ -35,9 +35,7 @@
             <a class="active" href="#top">Portfolio</a>
             <a href="contact.html" target="_self">Contact</a>
             <a href="contact.html#quoteForm" class="right">Get a Quote</a>
-            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-              &#9776; <!-- This is the hamburger icon -->
-          </a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
          </div>
       </div>
       <div class="portfolio-page">
@@ -100,25 +98,14 @@
         </div>
         <div class="section" id="customfurn">
           <h1>Custom Furniture</h1>
-          <!-- <div class="image-slideshow" id="custom-slideshow">
-            <a class="prev" onclick="plusSlides(-1, 'custom-slideshow')">&#10094;</a>
-            <div class="image fade">
-                <img src="pictures/slideshow/chairandmirror.jpg" alt="Custom Furniture 1">
-            </div>
-            <div class="image fade">
-                <img src="pictures/slideshow/chairandmirror.jpg" alt="Custom Furniture 2">
-            </div>
-            <div class="image fade">
-                <img src="pictures/slideshow/chairandmirror.jpg" alt="Custom Furniture 3">
-            </div>
-            <a class="next" onclick="plusSlides(1, 'custom-slideshow')">&#10095;</a>
-        </div> -->
+          <!-- insert new custom furniture here -->
         <p> Coming Soon </p>
         </div>
       </div>
       </div>
       <script>
-        let index = 0; // Declare a global index for tracking the current image in the slideshow
+        // sign and furniture slideshow
+        let index = 0; 
     
         function displayImages(n, slideshowId) {
             const images = document.getElementById(slideshowId).getElementsByClassName("image");
@@ -130,45 +117,40 @@
                 index = images.length - 1;
             }
     
-            // Hide all images
             for (let i = 0; i < images.length; i++) {
                 images[i].style.display = "none"; 
             }
-            images[index].style.display = "block"; // Show the current image
+            images[index].style.display = "block"; 
         }
     
         function plusSlides(n, slideshowId) {
-            index += n; // Update the global index
-            displayImages(index, slideshowId); // Display the new image
+            index += n; 
+            displayImages(index, slideshowId); 
         }
-    
-        // Auto slide function
         function autoSlides(slideshowId) {
             setInterval(() => {
                 index++;
-                displayImages(index, slideshowId); // Change image every 8 seconds
+                displayImages(index, slideshowId); 
             }, 8000); // Change image every 8 seconds
         }
     
-        // Initialize auto slides for the first slideshow
         displayImages(index, 'personal-slideshow'); 
         autoSlides('personal-slideshow'); 
         displayImages(index, 'custom-slideshow'); 
         autoSlides('custom-slideshow');
-    </script>
+      </script>
       <script>
+        // tooltip for slideshow
         document.querySelectorAll('.slider-link').forEach(link => {
         link.addEventListener('mousemove', function(e) {
         const tooltip = this.querySelector('.tooltip-text');
         const rect = this.getBoundingClientRect();
 
-        // Calculate position
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
-        // Position the tooltip
         tooltip.style.left = `${x + 80}px`;
-        tooltip.style.top = `${y + 20}px`; // 20px offset from the mouse position
+        tooltip.style.top = `${y + 20}px`; 
         tooltip.style.visibility = 'visible';
         tooltip.style.opacity = 1;
         });
@@ -182,6 +164,7 @@
 
       </script>
       <script>
+        // background change of portfolio buttons at top when hover
         document.addEventListener("DOMContentLoaded", () => {
             const portfolioTop = document.querySelector('.portfolio-top');
             const homeRemodelButton = document.querySelector('a[href="#homeremodel"] button');
@@ -189,7 +172,6 @@
             const customFurnButton = document.querySelector('a[href="#customfurn"] button');
             const commercialRenovButton = document.querySelector('a[href="#commercialrenov"] button');
     
-            // Set the default background to the home-remodel image on page load
             portfolioTop.classList.add('bg-commercial-renovation');
     
             homeRemodelButton.addEventListener('mouseover', () => {
@@ -213,15 +195,14 @@
                 portfolioTop.classList.add('bg-commercial-renovation');
             });
     
-            // Reset to the default home-remodel background when the mouse leaves the buttons
             document.querySelector('.portfolio-buttons').addEventListener('mouseleave', () => {
                 portfolioTop.classList.remove('bg-personal-sign', 'bg-custom-furniture', 'bg-commercial-renovation');
                 portfolioTop.classList.add('bg-commercial-renovation');
             });
         });
-    </script>
-    
-    <script>
+      </script>
+      <script>
+        // hamburger menu when mobile view
         function toggleMenu() {
             var topnav = document.getElementById("topnav");
             topnav.classList.toggle("responsive");
@@ -231,24 +212,20 @@
             const topnav = document.getElementById("topnav");
             const menuIcon = document.querySelector('.icon');
             
-            // Check if the click is outside the navbar and the hamburger menu
+            // close navbar if clicking outside of it
             if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
-                // If the menu is open, close it
                 if (topnav.classList.contains('responsive')) {
                     topnav.classList.remove('responsive');
                 }
             }
     
-            // Check if a menu item was clicked
+            // reload same page if active page reclicked
             if (topnav.contains(event.target) && event.target.tagName === 'A') {
-                // Check if this is the active link
                 if (event.target.classList.contains('active')) {
-                    // Reload the page if the active link is clicked
                     location.reload();
                 }
             }
         });
-    </script>
-    
+      </script>
    </body>
 </html>

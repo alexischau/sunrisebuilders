@@ -76,8 +76,6 @@
           <img class="thumbnail" src="../pictures/commercialrenov/ajuthespa/aju_26.JPG" onclick="changeImage('../pictures/commercialrenov/ajuthespa/aju_26.JPG')">
           <img class="thumbnail" src="../pictures/commercialrenov/ajuthespa/aju_27.JPG" onclick="changeImage('../pictures/commercialrenov/ajuthespa/aju_27.JPG')">
           <img class="thumbnail" src="../pictures/commercialrenov/ajuthespa/aju_28.JPG" onclick="changeImage('../pictures/commercialrenov/ajuthespa/aju_28.JPG')">
-          
-          
         </div>
         <script>
          const largeImage = document.getElementById('largeImage');
@@ -113,25 +111,23 @@
         <a href="../contact.html#quoteForm"><button class="booknow"> BOOK NOW </button></a>
       </div>
       <script>
+        // hamburger menu when mobile view
         function toggleMenu() {
-        var topnav = document.getElementById("topnav");
-        topnav.classList.toggle("responsive");
+            var topnav = document.getElementById("topnav");
+            topnav.classList.toggle("responsive");
         }
-
-    </script>
-    <script>
-        document.addEventListener('click', function(event) {
-    const topnav = document.getElementById("topnav");
-    const menuIcon = document.querySelector('.icon');
     
-    // Check if the click is outside the navbar and the hamburger menu
-    if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
-        // If the menu is open, close it
-        if (topnav.classList.contains('responsive')) {
-            topnav.classList.remove('responsive');
-        }
-    }
-});
-    </script>     
+        document.addEventListener('click', function(event) {
+            const topnav = document.getElementById("topnav");
+            const menuIcon = document.querySelector('.icon');
+            
+            // close navbar if clicking outside of it
+            if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
+                if (topnav.classList.contains('responsive')) {
+                    topnav.classList.remove('responsive');
+                }
+            }
+        });
+      </script>     
    </body>
 </html>

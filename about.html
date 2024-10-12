@@ -50,6 +50,7 @@
         </div>
      </div>
      <script>
+        // hamburger menu when mobile view
         function toggleMenu() {
             var topnav = document.getElementById("topnav");
             topnav.classList.toggle("responsive");
@@ -59,24 +60,20 @@
             const topnav = document.getElementById("topnav");
             const menuIcon = document.querySelector('.icon');
             
-            // Check if the click is outside the navbar and the hamburger menu
+            // close navbar if clicking outside of it
             if (!topnav.contains(event.target) && !menuIcon.contains(event.target)) {
-                // If the menu is open, close it
                 if (topnav.classList.contains('responsive')) {
                     topnav.classList.remove('responsive');
                 }
             }
     
-            // Check if a menu item was clicked
+            // reload same page if active page reclicked
             if (topnav.contains(event.target) && event.target.tagName === 'A') {
-                // Check if this is the active link
                 if (event.target.classList.contains('active')) {
-                    // Reload the page if the active link is clicked
                     location.reload();
                 }
             }
         });
-    </script>
-    
+    </script>  
    </body>
 </html>
